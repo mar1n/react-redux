@@ -1,13 +1,15 @@
 import React from 'react'
 import './Story.css'
+import { ButtonInline } from './Button'
 
-const Story = ({ story, columns }) => {
+const Story = ({ story, columns, onArchive }) => {
     const {
         title,
         url,
         author,
         num_comments,
-        points
+        points,
+        objectID
     } = story;
 
     return (
@@ -25,9 +27,13 @@ const Story = ({ story, columns }) => {
                 {points}
             </span>
             <span style={{ width: columns.archive.width }}>
+                <ButtonInline onClick={() => onArchive(objectID)}>
+                    Archive
+                </ButtonInline>
             </span>
         </div>
     )
 }
+
 
 export default Story

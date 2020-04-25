@@ -4,10 +4,14 @@ import './index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import store from './store'
+import { STORY_ARCHIVE } from './constants/actionTypes'
+import storyReducer from './reducers/story';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App stories={store.getState().storyState} onArchive={() => {}} />
+    <App 
+      stories={store.getState().storyState}
+      onArchive={id => store.dispatch({ type: STORY_ARCHIVE, id })} />
   </React.StrictMode>,
   document.getElementById('root')
 );

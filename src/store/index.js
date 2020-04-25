@@ -1,8 +1,8 @@
-import { createStore } from 'redux'
-import storyReducer from '../reducers/story'
+import { createStore } from 'redux';
+import rootReducer from '../reducers';
 
 const store = createStore(
-    storyReducer
-)
+  rootReducer
+);
 
-export default store
+export default store;

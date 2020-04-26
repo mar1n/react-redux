@@ -5,7 +5,6 @@ const fetchStories = query =>
   fetch(HN_BASE_URL + query)
     .then(response => response.json())
 
-
 export {
     fetchStories
 }
